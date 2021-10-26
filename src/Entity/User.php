@@ -65,6 +65,16 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
        $this->dateAdd = new \DateTime();
    }
 
+
+    /**
+    * @ORM\PreUpdate
+    */
+   public function setdateUpdValue()
+   {
+       $this->dateUpd = new \DateTime();
+   }
+
+   
     public function getId(): ?int
     {
         return $this->id;
